@@ -50,7 +50,7 @@ def proc_images(imagePatches, classZero, classOne, lowerIndex,upperIndex):
     y = []
     with open('train.csv', 'w', newline='') as csvfile:
         fileWriter = csv.writer(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
-
+        fileWriter.writerow(['filename', 'label'])
         for img in imagePatches[lowerIndex:upperIndex]:
             x.append(img)
             if img in classZero:
